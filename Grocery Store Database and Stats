@@ -1,0 +1,34 @@
+--Create a grocery store database
+
+CREATE TABLE store (id INTEGER PRIMARY KEY, item TEXT, section TEXT, price INTEGER, quantity INTEGER);
+
+INSERT INTO store VALUES (1, "grapes", "produce", 5.99, 55);
+INSERT INTO store VALUES (2, "strawberries", "produce", 7.95, 47);
+INSERT INTO store VALUES (3, "bananas", "produce", 0.99, 75);
+INSERT INTO store VALUES (4, "chicken", "meat", 21.99, 67);
+INSERT INTO store VALUES (5, "beef", "meat", 25.99, 70);
+INSERT INTO store VALUES (6, "turkey", "meat", 27.95, 75);
+INSERT INTO store VALUES (7, "food", "pets", 49.99, 43);
+INSERT INTO store VALUES (8, "treats", "pets", 6.99, 79);
+INSERT INTO store VALUES (9, "toys", "pets", 5.79, 57);
+INSERT INTO store VALUES (10, "mixed berries", "frozen", 3.95, 37);
+INSERT INTO store VALUES (11, "mixed vegetables", "frozen", 2.95, 49);
+INSERT INTO store VALUES (12, "cheese puffs", "snacks", 3.59, 65);
+INSERT INTO store VALUES (13, "popcorn", "snacks", 2.95,69);
+INSERT INTO store VALUES (14, "toothpaste", "hygiene", 1.95, 23);
+INSERT INTO store VALUES (15, "shampoo", "hygiene", 2.95, 32);
+
+--display the database ordered by price. 
+SELECT * FROM store
+ORDER BY price desc; 
+
+--what is the avg price of items in the pets section? 
+SELECT AVG(price) "avg pets item price"
+FROM store
+where section='pets'; 
+
+--what are the 5 most quantity items? 
+SELECT item, price, quantity
+FROM store
+order by quantity desc
+limit 5; 
