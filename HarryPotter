@@ -1,0 +1,57 @@
+https://harrypotter.fandom.com/wiki
+
+CREATE TABLE house (id INTEGER PRIMARY KEY AUTOINCREMENT, house TEXT, symbol TEXT, color TEXT, element TEXT);
+CREATE TABLE characters (id INTEGER PRIMARY KEY AUTOINCREMENT, fullname TEXT, sex TEXT, houseid INTEGER, petrona TEXT);
+CREATE TABLE beasts (id INTEGER PRIMARY KEY AUTOINCREMENT, callname TEXT, type TEXT);
+CREATE TABLE married (id INTEGER PRIMARY KEY AUTOINCREMENT, person1_id INTEGER, person2_id INTEGER);
+
+INSERT INTO house (house, symbol, color, element) VALUES ("Gryffindor", "Lion", "Scarlet and Gold", "Fire");
+INSERT INTO house (house, symbol, color, element) VALUES ("Hufflepuff", "Badger", "Yellow and Black", "Earth");
+INSERT INTO house (house, symbol, color, element) VALUES ("Slytherin", "Serpent", "Green and Silver", "Water");
+INSERT INTO house (house, symbol, color, element) VALUES ("Ravenclaw", "Eagle", "Blue and Bronze", "Air");
+
+INSERT INTO characters (fullname, sex, houseid, petrona) VALUES ("Hannah Abbott", "F", "2",  "Non-Corporeal");
+INSERT INTO characters (fullname, sex, houseid, petrona) VALUES ("Neville Longbottom", "M", "1", "Non-Corporeal");
+INSERT INTO characters (fullname, sex, houseid, petrona) VALUES ("Albus Dumbledore", "M", "1", "Phoenix");
+INSERT INTO characters (fullname, sex, houseid, petrona) VALUES ("Hermione Granger", "F", "1", "Otter");
+INSERT INTO characters (fullname, sex, houseid, petrona) VALUES ("Rubeus Hagrid", "M", "1", " ");
+INSERT INTO characters (fullname, sex, houseid, petrona) VALUES ("Harry Potter", "M", "1", "Stag");
+INSERT INTO characters (fullname, sex, houseid, petrona) VALUES ("James Potter", "M", "1", "Stag");
+INSERT INTO characters (fullname, sex, houseid, petrona) VALUES ("Lily Potter", "F", "1", "Doe");
+INSERT INTO characters (fullname, sex, houseid, petrona) VALUES ("Arthur Weasley", "M", "1", "Weasel");
+INSERT INTO characters (fullname, sex, houseid, petrona) VALUES ("Molly Weasley", "F", "1", "Non-Corporeal");
+INSERT INTO characters (fullname, sex, houseid, petrona) VALUES ("Ginny Weasley", "F", "1", "Horse");
+INSERT INTO characters (fullname, sex, houseid, petrona) VALUES ("Ron Weasley", "M", "1", "Jack Russell Terrier");
+INSERT INTO characters (fullname, sex, houseid, petrona) VALUES ("Severus Snape", "M", "3", "Doe");
+INSERT INTO characters (fullname, sex, houseid, petrona) VALUES ("Luna Lovegood", "F", "4", "Hare");
+INSERT INTO characters (fullname, sex, houseid, petrona) VALUES ("Cho Chang", "F", "4", "Swan");
+INSERT INTO characters (fullname, sex, houseid, petrona) VALUES ("Draco Malfoy", "M", "3", " ");
+INSERT INTO characters (fullname, sex, houseid, petrona) VALUES ("Earnest Macmillan", "M", "2", "Boar");
+INSERT INTO characters (fullname, sex, houseid, petrona) VALUES ("Cedric Diggory", "M", "2", " ");
+
+INSERT INTO beasts (callname, type) VALUES ("Hedwig", "Owl");
+INSERT INTO beasts (callname, type) VALUES ("Pigwidgeon", "Owl");
+INSERT INTO beasts (callname, type) VALUES ("Fawkes", "Pheonix");
+INSERT INTO beasts (callname, type) VALUES ("Fang", "Boarhound");
+INSERT INTO beasts (callname, type) VALUES ("Crookshanks", "Cat");
+INSERT INTO beasts (callname, type) VALUES ("Arnold", "Pygmy Puff");
+INSERT INTO beasts (callname, type) VALUES ("Trevor", "Toad");
+
+INSERT INTO married (person1_id, person2_id) VALUES (2, 1);
+INSERT INTO married (person1_id, person2_id) VALUES (12, 4);
+INSERT INTO married (person1_id, person2_id) VALUES (6, 11);
+INSERT INTO married (person1_id, person2_id) VALUES (7, 8);
+INSERT INTO married (person1_id, person2_id) VALUES (9, 10);
+INSERT INTO married (person1_id, person2_id) VALUES (19, 18);
+
+SELECT c.fullname, c.sex, h.house, c.petrona FROM characters c
+JOIN house h
+ON c.houseid=h.id
+ORDER BY c.fullname;
+
+SELECT a.fullname, b.fullname FROM married m 
+JOIN characters a
+ON a.id=m.person1_id
+JOIN characters b
+ON b.id=m.person2_id
+ORDER BY a.fullname;
