@@ -6,39 +6,15 @@ Use a DELETE to emulate what happens when you delete data in the app.
 
 /* What does the app's SQL look like? */
 
-CREATE TABLE Garmin_Activity (id INTEGER PRIMARY KEY AUTOINCREMENT, activity TEXT, date INTEGER, minutes INTEGER);
-
-INSERT INTO Garmin_Activity (activity, date, minutes) VALUES ("Yoga", "01/01/2023", 48);
-INSERT INTO Garmin_Activity (activity, date, minutes) VALUES ("Strength Training", "01/02/2023", 23);
-INSERT INTO Garmin_Activity (activity, date, minutes) VALUES ("Strength Training", "01/03/2023", 28);
-INSERT INTO Garmin_Activity (activity, date, minutes) VALUES ("Yoga", "01/04/2323", 33);
-INSERT INTO Garmin_Activity (activity, date, minutes) VALUES ("HIIT", "01/06/2023", 26);
-INSERT INTO Garmin_Activity (activity, date, minutes) VALUES ("Hiking", "01/07/2023", 64);
-
-SELECT * FROM Garmin_Activity;
-
-ALTER TABLE Garmin_Activity ADD calories INTEGER;
-
-UPDATE Garmin_Activity SET calories=91 WHERE id=1;
-UPDATE Garmin_Activity SET calories=88 WHERE id=2;
-UPDATE Garmin_Activity SET calories=142 WHERE id=3;
-UPDATE Garmin_Activity SET calories=74 WHERE id=4;
-UPDATE Garmin_Activity SET calories=105 WHERE id=5;
-UPDATE Garmin_Activity SET calories=234 WHERE id=6;
-
-SELECT * FROM Garmin_Activity;
-
-
-/* What does the app's SQL look like? */
 
 CREATE TABLE Garmin_Activity (id INTEGER PRIMARY KEY AUTOINCREMENT, activity TEXT, date INTEGER, minutes INTEGER, max_HR INTEGER);
 
-INSERT INTO Garmin_Activity (activity, date, minutes, max_HR) VALUES ("Yoga", "01/01/2023", 48, );
-INSERT INTO Garmin_Activity (activity, date, minutes, max_HR) VALUES ("Strength Training", "01/02/2023", 23);
-INSERT INTO Garmin_Activity (activity, date, minutes, max_HR ) VALUES ("Strength Training", "01/03/2023", 28);
-INSERT INTO Garmin_Activity (activity, date, minutes, max_HR) VALUES ("Yoga", "01/04/2323", 33);
-INSERT INTO Garmin_Activity (activity, date, minutes, max_HR) VALUES ("HIIT", "01/06/2023", 26);
-INSERT INTO Garmin_Activity (activity, date, minutes, max_HR) VALUES ("Hiking", "01/07/2023", 64);
+INSERT INTO Garmin_Activity (activity, date, minutes, max_HR) VALUES ("Yoga", "01/01/2023", 48, 115);
+INSERT INTO Garmin_Activity (activity, date, minutes, max_HR) VALUES ("Strength Training", "01/02/2023", 23, 139);
+INSERT INTO Garmin_Activity (activity, date, minutes, max_HR ) VALUES ("Strength Training", "01/03/2023", 28, 177);
+INSERT INTO Garmin_Activity (activity, date, minutes, max_HR) VALUES ("Yoga", "01/04/2323", 33, 123);
+INSERT INTO Garmin_Activity (activity, date, minutes, max_HR) VALUES ("HIIT", "01/06/2023", 26, 172);
+INSERT INTO Garmin_Activity (activity, date, minutes, max_HR) VALUES ("Hiking", "01/07/2023", 64, 162);
 
 SELECT * FROM Garmin_Activity;
 
